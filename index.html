@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Boys blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+        {% if user.is_authenticated %}
+          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}    
+            <h1><a href="/">Django Boys Blog</a></h1>
+        </div>
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-8">
+        {% block content %}
+        {% endblock %}
+     </div>
+   </div>
+ </div>
+        <div>
+            <p>published: 02.05.2020, 17:02</p>
+            <h2><a href="">My first post</a></h2>
+            <p>Water pollution is the pollution of bodies of water, such as lakes, rivers, seas, the oceans, as well as groundwater. It occurs when pollutants reach these bodies of water, without treatment. Waste from homes, factories and other buildings get into the water bodies and as a result water gets contaminated .
+
+Water pollution is a probem for the species and ecosystems there. It affects plants and organisms living in the water. In almost all cases the effect is damaging not only to individual species and populations, but also to the wider biological communities. The colour is usually green or brown but normal water can be blue.
+
+Agriculture is one of the major sources of water pollution. The fertilizers given to the crops for better growth are washed into rivers and lakes, which in turn pollutes the water.
+
+There are many chemicals that are naturally found in these bodies of water. Today water may be polluted by nitrates, phosphates, oil, acid rain, and debris such as sediment, fallen logs and so on. When people and animals drink water from such rivers, the poisonous chemicals may affect them. Life in rivers are also affected, and humans who consume fish may also have health problems.</p>
+</div>
+        <div>
+            <p>published: 02.05.2020, 17:12</p>
+            <h2><a href="">My second post</a></h2>
+          <p>Air pollution is a type of environmental pollution that affects the air and is usually caused by smoke or other harmful gases, mainly oxides of carbon, sulphur and nitrogen.
+
+  In other words, air pollution is the contamination of air due to the presence or introduction of a substance which has a poisonous effect.
+
+  Many of the world's large cities today have polluted air or low air quality.[1]
+
+  Even 2,000 years ago, the Romans were complaining about the polluted air in their cities. At that time, the air was thick with smoke from fires and the smell of sewers.[1] Air pollution has been classified as a danger to human health and Earth's many ecosystems for a long time.</p>
+  </div>
+    </body>
+</html>
